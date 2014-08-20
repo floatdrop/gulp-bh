@@ -21,6 +21,23 @@ gulp.src('*.bh.js')
     .pipe(gulp.dest('./dist'));
 ```
 
+### API
+
+#### bh(bemjson, filename, [options])
+
+Creates writable stream, that consumes `*.bh.js` files. After `finish` event it will generate single file with compiled HTML from passed `bemjson`.
+
+###### bemjson
+Type: `Object`
+
+###### filename
+Type: `String`
+
+###### options
+Type: `Object`
+
+See [setOptions](https://github.com/enb-make/bh/blob/master/lib/bh.js#L527-L538) in BH.
+
 ## License
 
 MIT (c) 2014 Vsevolod Strukchinsky

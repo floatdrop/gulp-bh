@@ -5,6 +5,7 @@ var BH = require('bh').BH;
 module.exports = function (bemjson, fileName, options) {
     options = options || {};
     var bh = new BH();
+    bh.setOptions(options);
 
     function apply(obj, enc, cb) {
         require(obj.path)(bh);
@@ -12,12 +13,18 @@ module.exports = function (bemjson, fileName, options) {
     }
 
     function compile() {
-        var outputFile = new File({
-            base: '',
-            cwd: '',
-            path: fileName,
-            contents: new Buffer(bh.apply(bemjson))
-        });
+        var outputFile;
+
+        try {
+            outputFile = new File({
+                base: '',
+                cwd: '',
+                path: fileName,
+                contents: new Buffer(bh.apply(bemjson))
+            });
+        } catch (err) {
+            this.emit('error', err);
+        }
 
         this.emit('data', outputFile);
         this.emit('end');
