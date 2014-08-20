@@ -1,0 +1,34 @@
+{
+  "name": "gulp-bh",
+  "version": "0.0.0",
+  "description": "Gulp plugin for BH rendering",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/floatdrop/gulp-bh.git"
+  },
+  "keywords": [
+    "gulp",
+    "BEM",
+    "BH"
+  ],
+  "author": "Vsevolod Strukchinsky <floatdrop@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/floatdrop/gulp-bh/issues"
+  },
+  "homepage": "https://github.com/floatdrop/gulp-bh",
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "should": "^4.0.4"
+  },
+  "dependencies": {
+    "bh": "^3.1.0",
+    "through2": "^1.1.1",
+    "vinyl": "^0.3.2",
+    "vinyl-fs": "^0.3.6"
+  }
+}
