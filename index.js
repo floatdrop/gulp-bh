@@ -2,7 +2,6 @@ var through = require('through2');
 var File = require('vinyl');
 var BH = require('bh').BH;
 var path = require('path');
-require('should');
 
 module.exports = function (bemjson, fileName, options) {
     options = options || {};

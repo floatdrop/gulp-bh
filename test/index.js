@@ -1,6 +1,7 @@
 /* global it */
 
 var bh = require('../index.js');
+require('should');
 
 it('should render bemjson', function (done) {
     var stream = bh({
